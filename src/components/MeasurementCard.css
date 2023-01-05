@@ -3,7 +3,7 @@
     flex-direction: column;
     border: 1.5px solid rgba(180, 179, 179, 0.63);
     border-radius: 6px;
-    width : 30rem;
+    width : minmax(22rem, 30rem);
 }
 
 .Mcard-header{

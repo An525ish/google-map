@@ -9,31 +9,31 @@ body {
   background-color: aliceblue;
 }
 
-.container{
-    display: flex;
-    justify-content: space-around;
+.container {
+  display: flex;
+  justify-content: space-around;
 }
 
-.field-container{
-    display: flex;
-    flex-direction: column;
-    gap : 4rem;
+.field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
-header{
-    padding: 3rem;
-    background-color: aliceblue;
-    margin-bottom: 2rem;
+header {
+  padding: 3rem;
+  background-color: aliceblue;
+  margin-bottom: 2rem;
 }
 
-header span{
-    font-weight: 600;
+header span {
+  font-weight: 600;
 }
 h2 {
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: 300;
-    color: #142baa;
-
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 300;
+  color:
+  #142baa;
 }
 .input-field {
   display: flex;
@@ -47,24 +47,38 @@ h2 {
   justify-content: space-between;
 }
 
-.map-container{
-    width: 30rem;
-    height: 30rem;
-    background-color: aqua;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
+.map-container {
+  width: 30rem;
+  height: 30rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-@media only screen and (max-width : 800px) {
-    .container{
-        flex-direction: column-reverse;
-        gap : 5rem;
-        align-items: center;
-    }
+@media only screen and (max-width: 1050px) {
+  h2 {
+    font-size: 1.4rem;
+  }
 
-    .field{
-        flex-direction: column;
-        gap : 2rem;
-        align-items: center;
-    }
-    
+  header{
+    padding: 1rem;
+  }
+  .container {
+    flex-direction: column-reverse;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .field {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .field-container {
+    align-items: center;
+  }
+
+  .map-container {
+    width: 23rem;
+    height: 25rem;
+  }
 }

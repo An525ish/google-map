@@ -103,7 +103,7 @@ function App() {
               <GoogleMap
                 center={center}
                 zoom={15}
-                mapContainerStyle={{ width: "100%", height: "100%" }}
+                mapContainerStyle={{ width: "100%", height: "100%", margin : "0 auto" }}
                 options={{
                   zoomControl: false,
                   fullscreenControl: false,
