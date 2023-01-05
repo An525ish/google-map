@@ -1,0 +1,45 @@
+.inputs-container{
+  display: flex;
+  flex-direction: column;
+  gap : .5rem;
+}
+
+input {
+  height: 1.8rem;
+  width: 14rem;
+  color: #1E2A32;
+  padding-inline: .5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+
+}
+
+.input-content {
+    display: flex;
+    align-items: center;
+    border: 2px solid blue;
+    width: max-content;
+    border-radius: 6px;
+    border: 1.5px solid rgba(180, 179, 179, 0.63);
+    background-color: white;
+}
+
+.input-content span{
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.input-content i{
+    padding-inline: .3rem;
+    font-size: 1.1rem;
+
+}
+
+.input-content:focus-within{
+    border : 2px solid rgb(0, 115, 255);
+}

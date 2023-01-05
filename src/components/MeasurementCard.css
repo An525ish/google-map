@@ -1,0 +1,30 @@
+.Mcard{
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid rgba(180, 179, 179, 0.63);
+    border-radius: 6px;
+    width : 30rem;
+}
+
+.Mcard-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-radius: 6px 6px 0 0;
+    background-color: white;
+    font-size: 1.2rem;
+}
+
+.Mcard-header span{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color : rgb(8, 120, 247);
+}
+
+.Mcard-body{
+    padding: 2rem;
+}
+
+.Mcard-body span{
+    font-weight: bold;
+}
