@@ -9,6 +9,10 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
+main{
+  padding: 1rem;
+}
+
 .container {
   display: flex;
   justify-content: space-around;
@@ -20,7 +24,7 @@ body {
   gap: 4rem;
 }
 header {
-  padding: 3rem;
+  padding: 2rem;
   background-color: aliceblue;
   margin-bottom: 1rem;
 }
