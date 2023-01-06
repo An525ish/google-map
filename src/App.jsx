@@ -4,7 +4,7 @@ import './App.css'
 import Input from './components/Input'
 import Button from './components/Button';
 import MeasurementCard from './components/MeasurementCard'
-import { GoogleMap, useJsApiLoader, Marker, Autocomplete, DirectionsRenderer, } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker, Autocomplete, DirectionsRenderer} from '@react-google-maps/api';
 import Navbar from './components/Navbar';
 
 const center = {
@@ -20,21 +20,33 @@ function App() {
     libraries: ['places'],
   })
 
+  const [map, setMap] = useState(/** @type google.maps.Map */ (null))
   const [directionsResponse, setDirectionsResponse] = useState(null)
   const [distance, setDistance] = useState('')
 
   const originRef = useRef()
   const destinationRef = useRef()
+  const waypointsRef = useRef()
 
   const [originInput, setoriginInput] = useState('')
   const [destinationInput, setdestinationInput] = useState('')
-
 
   if (!isLoaded) {
     return
   }
 
   async function calculateRoute() {
+
+    var waypts = []
+    for (let i = 0; i < 1; i++) {
+      if(waypointsRef.current.value !== ""){
+        waypts.push({
+          location: waypointsRef.current.value,
+          stopover: false,
+        })
+      }
+    }
+
     if (originRef.current.value === '' || destinationRef.current.value === '') {
       return
     }
@@ -42,13 +54,28 @@ function App() {
     const results = await directionsService.route({
       origin: originRef.current.value,
       destination: destinationRef.current.value,
+      waypoints: waypts,
+      optimizeWaypoints: true,
       travelMode: google.maps.TravelMode.DRIVING,
     })
     setDirectionsResponse(results)
     setDistance(results.routes[0].legs[0].distance.text)
     setoriginInput(originRef.current.value)
     setdestinationInput(destinationRef.current.value)
+
   }
+
+  // function clearRoute() {
+  //   setDirectionsResponse(null)
+  //   setDistance('')
+  //   setDuration('')
+  //   originRef.current.value = ''
+  //   destinationRef.current.value = ''
+  //   waypointsRef.current.value = ''
+  // }
+
+  // if(Marker)
+  // Marker.setMap(null)
 
   return (
     <>
@@ -72,7 +99,7 @@ function App() {
                     id="Stop"
                     icon={<i className="fa-solid fa-circle-stop"></i>}
                     color='black'
-                    access = 'disabled'
+                    innerRef={waypointsRef}
                   />
                 </Autocomplete>
                 <Autocomplete>
@@ -112,6 +139,7 @@ function App() {
                   streetViewControl: false,
                   mapTypeControl: false,
                 }}
+                onLoad={map => setMap(map)}
               >
                 <Marker position={center} />
                 {directionsResponse && (
