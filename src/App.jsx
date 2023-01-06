@@ -5,6 +5,7 @@ import Input from './components/Input'
 import Button from './components/Button';
 import MeasurementCard from './components/MeasurementCard'
 import { GoogleMap, useJsApiLoader, Marker, Autocomplete, DirectionsRenderer, } from '@react-google-maps/api';
+import Navbar from './components/Navbar';
 
 const center = {
   lat: 23.2177,
@@ -51,6 +52,7 @@ function App() {
 
   return (
     <>
+    <Navbar/>
       <header><h2>Let's calculate <span> distance </span> from Google maps</h2></header>
       <main>
         <div className='container'>

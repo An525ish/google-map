@@ -3,7 +3,8 @@
     flex-direction: column;
     border: 1.5px solid rgba(180, 179, 179, 0.63);
     border-radius: 6px;
-    width : minmax(22rem, 30rem);
+    width : 30rem;
+    
 }
 
 .Mcard-header{
@@ -13,6 +14,7 @@
     border-radius: 6px 6px 0 0;
     background-color: white;
     font-size: 1.2rem;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .Mcard-header span{
@@ -23,8 +25,15 @@
 
 .Mcard-body{
     padding: 2rem;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .Mcard-body span{
     font-weight: bold;
+}
+
+@media only screen and (max-width : 1050px) {
+    .Mcard{
+        width: 23rem;
+    }
 }

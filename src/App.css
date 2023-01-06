@@ -5,8 +5,8 @@
 }
 
 body {
-  padding: 2rem;
   background-color: aliceblue;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .container {
@@ -22,7 +22,7 @@ body {
 header {
   padding: 3rem;
   background-color: aliceblue;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 header span {
@@ -34,7 +34,9 @@ h2 {
   font-weight: 300;
   color:
   #142baa;
+  font-family: 'Work Sans', sans-serif;
 }
+
 .input-field {
   display: flex;
   flex-direction: column;
